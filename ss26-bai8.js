@@ -5,16 +5,17 @@ function searchs(arr, n) {
     if (n === 0) {
         return "Mảng không chứa phần tử";
     } else {
+        let array = arr.filter(num => num % 2 != 0);
         let str = "";
         for (let i = 0; i < n; i++) {
             let search = 0
-            for (let j = 2; j < arr[i]; j++) {
-                    if (arr[i] % j == 0) {
-                        search++
-                    }
+            for (let j = 2; j < array[i]; j++) {
+                if (array[i] % j == 0) {
+                    search++;
+                }
             }
-            if (search == 0 && arr[i] > 2) {
-                str = str + " " + arr[i]
+            if (search == 0 && array[i] > 1) {
+                str = str + " " + array[i];
             }
         }
         return str;
