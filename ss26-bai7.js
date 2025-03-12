@@ -5,13 +5,9 @@ function search(arr, n) {
     if(n === 0){
         return "Mảng không chứa phần tử";
     }else{
-        let str ="";
-        for(let i = 0; i < n; i++){
-            if(arr[i] % 2===0){
-                str = str +" "+ arr[i];
-            }
-        }
-        return str;
+        let number = arr.filter(num => num % 2 == 0);
+        let array = number.map(num => num * num);
+        return array;
     }
 }
 if(n >= 0){
