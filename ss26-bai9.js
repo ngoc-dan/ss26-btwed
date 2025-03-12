@@ -5,12 +5,8 @@ function searchEven(arr, n) {
     if (n === 0) {
         return "Mảng không chứa phần tử";
     } else {
-        let sumc = 0;
-        for (let i = 0; i < n; i++) {
-            if (arr[i] % 2 == 0) {
-                sumc = sumc + arr[i]
-            }
-        }
+        let even = arr.filter(num => num % 2 == 0);
+        let sumc = even.reduce( (total, num) => total + num, 0);
         return sumc;
     }
 }
@@ -18,12 +14,8 @@ function searchOdd(arr, n) {
     if (n === 0) {
         return "Mảng không chứa phần tử";
     } else {
-        let suml = 0;
-        for (let i = 0; i < n; i++) {
-            if (arr[i] % 2 != 0) {
-                suml = suml + arr[i]
-            }
-        }
+        let odd = arr.filter(num => num % 2 != 0);
+        let suml = odd.reduce( (total, num) => total + num, 0);
         return suml;
     }
 }
